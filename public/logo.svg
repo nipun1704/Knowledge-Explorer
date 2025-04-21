@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Circle -->
+  <circle cx="256" cy="256" r="240" fill="#3B82F6" />
+  
+  <!-- Book Shape -->
+  <path d="M160 140C160 126.745 170.745 116 184 116H328C341.255 116 352 126.745 352 140V372C352 385.255 341.255 396 328 396H184C170.745 396 160 385.255 160 372V140Z" fill="white"/>
+  
+  <!-- Book Pages -->
+  <path d="M184 140H328V372H184V140Z" fill="#F3F4F6"/>
+  
+  <!-- Knowledge Lines -->
+  <path d="M200 180H312" stroke="#3B82F6" stroke-width="8" stroke-linecap="round"/>
+  <path d="M200 220H312" stroke="#3B82F6" stroke-width="8" stroke-linecap="round"/>
+  <path d="M200 260H312" stroke="#3B82F6" stroke-width="8" stroke-linecap="round"/>
+  <path d="M200 300H312" stroke="#3B82F6" stroke-width="8" stroke-linecap="round"/>
+  <path d="M200 340H312" stroke="#3B82F6" stroke-width="8" stroke-linecap="round"/>
+  
+  <!-- Magnifying Glass -->
+  <circle cx="320" cy="320" r="40" stroke="white" stroke-width="16" fill="none"/>
+  <path d="M340 340L380 380" stroke="white" stroke-width="16" stroke-linecap="round"/>
+</svg> 
