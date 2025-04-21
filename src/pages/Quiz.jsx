@@ -17,6 +17,7 @@ export default function Quiz() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [backgroundImage, setBackgroundImage] = useState('');
+  const [showFeedback, setShowFeedback] = useState(false);
 
   useEffect(() => {
     const loadQuestions = async () => {
@@ -67,6 +68,7 @@ export default function Quiz() {
     
     const isCorrect = optionIndex === questions[currentIndex].answer;
     setSelectedOption(optionIndex);
+    setShowFeedback(true);
     
     if (isCorrect) {
       setScore(score + 1);
@@ -77,6 +79,7 @@ export default function Quiz() {
     if (currentIndex < questions.length - 1) {
       setCurrentIndex(currentIndex + 1);
       setSelectedOption(null);
+      setShowFeedback(false);
     } else {
       setShowResult(true);
     }
@@ -86,6 +89,7 @@ export default function Quiz() {
     if (currentIndex > 0) {
       setCurrentIndex(currentIndex - 1);
       setSelectedOption(null);
+      setShowFeedback(false);
     }
   };
 
@@ -113,11 +117,30 @@ export default function Quiz() {
   }
 
   if (showResult) {
+    const percentage = Math.round((score / questions.length) * 100);
+    let resultMessage = '';
+    let emoji = '🎉';
+    
+    if (percentage >= 90) {
+      resultMessage = 'Outstanding! You\'re a master of this topic!';
+      emoji = '🏆';
+    } else if (percentage >= 70) {
+      resultMessage = 'Great job! You really know your stuff!';
+      emoji = '🌟';
+    } else if (percentage >= 50) {
+      resultMessage = 'Good effort! Keep learning and improving!';
+      emoji = '👍';
+    } else {
+      resultMessage = 'Keep practicing! You\'ll get better with time.';
+      emoji = '📚';
+    }
+    
     return (
       <div className="quiz-result">
-        <h2>Quiz Complete! 🎉</h2>
+        <h2>Quiz Complete! {emoji}</h2>
         <p>Your score: {score}/{questions.length}</p>
-        <p>Percentage: {Math.round((score / questions.length) * 100)}%</p>
+        <p>Percentage: {percentage}%</p>
+        <p>{resultMessage}</p>
         <button onClick={handleTryAgain}>Try Another Quiz</button>
       </div>
     );
@@ -134,6 +157,7 @@ export default function Quiz() {
   }
 
   const currentQuestion = questions[currentIndex];
+  const progressPercentage = ((currentIndex + 1) / questions.length) * 100;
   
   return (
     <>
@@ -147,6 +171,13 @@ export default function Quiz() {
         <div className="quiz-header">
           <span>Question {currentIndex + 1}/{questions.length}</span>
           <span>Score: {score}</span>
+        </div>
+        
+        <div className="progress-container">
+          <div 
+            className="progress-bar" 
+            style={{ width: `${progressPercentage}%` }}
+          ></div>
         </div>
         
         <h2 className="question">{currentQuestion.question}</h2>
@@ -175,7 +206,7 @@ export default function Quiz() {
           })}
         </div>
         
-        {selectedOption !== null && (
+        {showFeedback && selectedOption !== null && (
           <div className="explanation">
             {selectedOption === currentQuestion.answer ? (
               <p className="correct-text">Correct! Well done! 🎉</p>
