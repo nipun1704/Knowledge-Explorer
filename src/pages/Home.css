@@ -5,11 +5,7 @@
   margin: 0;
   padding: 0;
   text-align: center;
-  background-image: url('/public/history_orig.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  background: #fff9f0;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -24,6 +20,7 @@ body {
   overflow-x: hidden;
   width: 100%;
   height: 100%;
+  background: #fff9f0;
 }
 
 /* Ensure the root element takes full height */
@@ -41,7 +38,7 @@ html, body, #root {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
 
@@ -58,19 +55,19 @@ html, body, #root {
 .action-card {
   padding: 2rem;
   border-radius: 12px;
-  background: rgba(248, 250, 252, 0.9);
-  color: inherit;
+  background: #ffffff;
+  color: #3f3528;
   text-decoration: none;
-  transition: transform 0.3s, box-shadow 0.3s;
-  backdrop-filter: blur(5px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.2s ease;
+  border: 1px solid #f0e6d8;
   min-width: 250px;
+  box-shadow: 0 4px 6px rgba(92, 79, 61, 0.02);
 }
 
 .action-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
-  background: rgba(248, 250, 252, 0.95);
+  transform: translateY(-2px);
+  border-color: #b39a7c;
+  background: #fffbf5;
 }
 
 .hero-section {
@@ -86,20 +83,19 @@ html, body, #root {
 .hero-section h1 {
   font-size: 3.5rem;
   margin-bottom: 1rem;
-  color: #ffffff;
+  color: #3f3528;
   font-weight: 800;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-  letter-spacing: -0.5px;
+  letter-spacing: -0.02em;
 }
 
 .hero-section p {
   font-size: 1.4rem;
-  color: #f8fafc;
+  color: #8b7355;
   margin-bottom: 2.5rem;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
+  line-height: 1.6;
 }
 
 .search-box {
@@ -111,16 +107,16 @@ html, body, #root {
 
 .search-input-container {
   display: flex;
-  background: rgba(255, 255, 255, 0.95);
-  border-radius: 50px;
-  box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(92, 79, 61, 0.02);
   overflow: hidden;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(5px);
+  transition: all 0.2s ease;
+  border: 1px solid #f0e6d8;
 }
 
 .search-input-container:focus-within {
-  box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+  border-color: #b39a7c;
   transform: translateY(-2px);
 }
 
@@ -131,32 +127,33 @@ html, body, #root {
   font-size: 1.2rem;
   outline: none;
   background: transparent;
-  color: #1e293b;
+  color: #3f3528;
   font-weight: 500;
 }
 
 .search-input-container input::placeholder {
-  color: #64748b;
+  color: #c4b5a3;
 }
 
 .search-input-container button {
   padding: 0 2.5rem;
-  background: #3498db;
+  background: #b39a7c;
   color: white;
   border: none;
   font-size: 1.1rem;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s;
+  transition: all 0.2s ease;
 }
 
 .search-input-container button:hover {
-  background: #2980b9;
-  transform: scale(1.05);
+  background: #c4b5a3;
+  transform: translateY(-2px);
 }
 
 .search-input-container button:disabled {
-  background: #bdc3c7;
+  background: #f0e6d8;
+  color: #c4b5a3;
   cursor: not-allowed;
 }
 
@@ -164,10 +161,10 @@ html, body, #root {
   display: inline-block;
   width: 24px;
   height: 24px;
-  border: 3px solid rgba(255,255,255,0.3);
+  border: 3px solid #f0e6d8;
   border-radius: 50%;
-  border-top-color: white;
-  animation: spin 1s ease-in-out infinite;
+  border-top-color: #b39a7c;
+  animation: spin 1s linear infinite;
 }
 
 @keyframes spin {
@@ -181,10 +178,9 @@ html, body, #root {
 }
 
 .recent-searches p {
-  color: #f8fafc;
+  color: #8b7355;
   margin-bottom: 1rem;
   font-size: 1.1rem;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
 }
 
 .tags {
@@ -195,22 +191,21 @@ html, body, #root {
 }
 
 .tag {
-  background: rgba(241, 245, 249, 0.9);
-  color: #1e293b;
-  border: none;
-  border-radius: 20px;
+  background: #ffffff;
+  color: #3f3528;
+  border: 1px solid #f0e6d8;
+  border-radius: 12px;
   padding: 0.5rem 1.2rem;
   font-size: 1rem;
   cursor: pointer;
-  transition: all 0.3s;
-  backdrop-filter: blur(5px);
+  transition: all 0.2s ease;
   font-weight: 500;
 }
 
 .tag:hover {
-  background: rgba(241, 245, 249, 1);
+  border-color: #b39a7c;
   transform: translateY(-2px);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  background: #fffbf5;
 }
 
 .results-section {
@@ -228,24 +223,23 @@ html, body, #root {
 .empty-state {
   text-align: center;
   margin-top: 4rem;
-  color: #f8fafc;
-  background: rgba(0, 0, 0, 0.4);
+  color: #3f3528;
+  background: #ffffff;
   padding: 3rem;
   border-radius: 12px;
-  backdrop-filter: blur(5px);
-  box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 6px rgba(92, 79, 61, 0.02);
+  border: 1px solid #f0e6d8;
 }
 
 .empty-state h2 {
   font-size: 2.2rem;
   margin-bottom: 1.5rem;
-  color: #ffffff;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+  color: #3f3528;
 }
 
 .empty-state p {
   font-size: 1.2rem;
-  color: #f8fafc;
+  color: #8b7355;
   line-height: 1.6;
 }
 
@@ -258,39 +252,37 @@ html, body, #root {
   display: block;
   margin: 3rem auto 0;
   padding: 1rem 2.5rem;
-  background: #10b981;
+  background: #b39a7c;
   color: white;
   border: none;
-  border-radius: 50px;
+  border-radius: 12px;
   font-size: 1.1rem;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s;
+  transition: all 0.2s ease;
   position: relative;
   z-index: 2;
-  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
 }
 
 .quiz-button:hover {
-  background: #059669;
-  transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+  background: #c4b5a3;
+  transform: translateY(-2px);
 }
 
 .quiz-container {
   max-width: 900px;
   margin: 3rem auto;
   padding: 3rem;
-  background: rgba(255, 255, 255, 0.95);
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 4px 6px rgba(92, 79, 61, 0.02);
   position: relative;
   z-index: 2;
-  backdrop-filter: blur(10px);
+  border: 1px solid #f0e6d8;
 }
 
 .quiz-question h2 {
-  color: #1e293b;
+  color: #3f3528;
   margin-bottom: 2rem;
   font-size: 2rem;
   font-weight: 700;
@@ -299,7 +291,7 @@ html, body, #root {
 .quiz-question p {
   font-size: 1.3rem;
   margin-bottom: 2.5rem;
-  color: #334155;
+  color: #8b7355;
   line-height: 1.6;
 }
 
@@ -310,21 +302,20 @@ html, body, #root {
 
 .quiz-option {
   padding: 1.2rem;
-  background: #f8fafc;
-  border: 1px solid #e2e8f0;
-  border-radius: 10px;
+  background: #ffffff;
+  border: 1px solid #f0e6d8;
+  border-radius: 12px;
   text-align: left;
   cursor: pointer;
-  transition: all 0.3s;
+  transition: all 0.2s ease;
   font-size: 1.1rem;
-  color: #1e293b;
+  color: #3f3528;
 }
 
 .quiz-option:hover {
-  background: #f1f5f9;
-  border-color: #cbd5e1;
-  transform: translateX(5px);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  border-color: #b39a7c;
+  transform: translateY(-2px);
+  background: #fffbf5;
 }
 
 .quiz-result {
@@ -333,7 +324,7 @@ html, body, #root {
 }
 
 .quiz-result h2 {
-  color: #10b981;
+  color: #3f3528;
   margin-bottom: 1.5rem;
   font-size: 2.2rem;
   font-weight: 700;
@@ -341,7 +332,7 @@ html, body, #root {
 
 .quiz-result p {
   font-size: 1.3rem;
-  color: #334155;
+  color: #8b7355;
   line-height: 1.6;
 }
 
@@ -355,19 +346,19 @@ html, body, #root {
 
 .difficulty-selector select {
   padding: 0.8rem 1.5rem;
-  border-radius: 8px;
-  border: 1px solid #e2e8f0;
-  background: white;
+  border-radius: 12px;
+  border: 1px solid #f0e6d8;
+  background: #ffffff;
   font-size: 1rem;
   cursor: pointer;
-  transition: all 0.2s;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-  color: #1e293b;
+  transition: all 0.2s ease;
+  color: #3f3528;
 }
 
 .difficulty-selector select:hover {
-  border-color: #cbd5e1;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border-color: #b39a7c;
+  transform: translateY(-2px);
+  background: #fffbf5;
 }
 
 /* Media Queries for Responsiveness */
