@@ -115,4 +115,9 @@ vite-project/
 - Immediate feedback
 
 
+## deployed link - https://knowledgeexplore.netlify.app/
+
+
+
+
 
